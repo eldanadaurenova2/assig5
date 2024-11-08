@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Bootstrap Design</title>
+    <script src="sound.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="aboutus">
+    <nav class="navbar navbar-expand-lg navbar-light text-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item mx-5"><a href="design.html" class="nav-link">Главная</a></li>
+                    <li class="nav-item mx-5"><a href="aboutus.html" class="nav-link">О Нас</a></li>
+                    <li class="nav-item mx-5"><a href="keys.html" class="nav-link">Кейсы</a></li>
+                    <li class="nav-item mx-5"><a href="task.html" class="nav-link">Задачи</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="section2" class="bg-black text-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1>Мы работаем с профессионалами своего дела!</h1>
+                    <p>Наши дизайнеры обладают многолетним опытом в создании уютных, функциональных и красивых пространств — от квартир и домов до офисов и коммерческих помещений. Мы тщательно подбираем материалы, цвета и элементы декора, чтобы каждый проект стал по-настоящему уникальным.</p>
+                    <a href="#section3" class="btn btn-outline-light mt-4">Посмотреть кейсы</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="imges/2страница.png" class="img-fluid" alt="сбоку">
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <button id="themeToggle" class="btn btn-primary">Переключить тему</button>
+            </div>
+        </div>
+    </section>
+
+<div id="weather" class="text-center mt-5">
+    <h2>Погода в вашем городе</h2>
+    <p id="weatherData">Загрузка данных...</p>
+</div>
+
+    <footer class="bg-grey text-light py-5 bg-black">
+        <div class="container d-flex justify-content-between">
+            <div>
+                <span class="logo fs-4 fw-bold">CREATE COMFORT</span>
+                <p>Your guide to the world of design</p>
+            </div>
+            <div>
+                <h4>About Us</h4>
+                <ul class="list-unstyled">
+                    <li>Portfolio</li>
+                    <li>Reviews</li>
+                    <li>Keys</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>Astana, Kazakhstan</p>
+                <p>+7 705 622 6140</p>
+            </div>
+        </div>
+        <hr>
+        <p class="text-center">Made by Daurenova Eldana</p>
+    </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="back.js" defer></script>
+</body>
+</html>

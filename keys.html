@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Bootstrap Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+    <script src="sound.js"></script>
+    <style>
+        img {
+            height: 570px;
+            width: 265px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .active {
+            transform: scale(1.2);
+            z-index: 1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+<header class="aboutus">
+    <nav class="navbar navbar-expand-lg navbar-light text-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item mx-5"><a href="design.html" class="nav-link">Главная</a></li>
+                    <li class="nav-item mx-5"><a href="aboutus.html" class="nav-link">О Нас</a></li>
+                    <li class="nav-item mx-5"><a href="keys.html" class="nav-link">Кейсы</a></li>
+                    <li class="nav-item mx-5"><a href="task.html" class="nav-link">Задачи</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="container mt-5">
+        <div class="row align-items-end align-items-stretch fade-in" id="imageContainer"></div>
+        <div class="text-center mt-5">
+            <button id="showTimeBtn" class="btn btn-info">Показать текущее время</button>
+            <p id="currentTime" class="mt-3"></p>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-grey text-light py-5 bg-black">
+    <div class="container d-flex justify-content-between">
+        <div>
+            <span class="logo fs-4 fw-bold">CREATE COMFORT</span>
+            <p>Your guide to the world of design</p>
+        </div>
+        <div>
+            <h4>О нас</h4>
+            <ul class="list-unstyled">
+                <li>Портфолио</li>
+                <li>Отзывы</li>
+                <li>Кейсы</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Свяжитесь с нами</h4>
+            <p>Астана, Казахстан</p>
+            <p>+7 705 622 6140</p>
+        </div>
+    </div>
+    <hr>
+    <p class="text-center">Сделано командой Daurenova Eldana</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+    const images = [
+        { src: "imges/1in3%20(1).png", alt: "Интерьер 1" },
+        { src: "imges/2в3%20(2).jpg", alt: "Интерьер 2" },
+        { src: "imges/3в3%20(1).png", alt: "Интерьер 3" },
+        { src: "imges/4в3%20(1).png", alt: "Интерьер 4" }
+    ];
+
+    function displayImages() {
+        const container = document.getElementById('imageContainer');
+        images.forEach(image => {
+            const colDiv = document.createElement('div');
+            colDiv.classList.add('col-lg-3', 'col-md-6', 'mt-4', 'h-100');
+
+            const imgElement = document.createElement('img');
+            imgElement.src = image.src;
+            imgElement.alt = image.alt;
+            imgElement.classList.add('card-img-top');
+            imgElement.onclick = () => selectImage(imgElement);
+
+            colDiv.appendChild(imgElement);
+            container.appendChild(colDiv);
+        });
+    }
+
+    function selectImage(img) {
+        const images = document.querySelectorAll('img');
+        images.forEach(image => image.classList.remove('active'));
+        img.classList.add('active');
+        playSound();
+    }
+
+
+    function playSound() {
+        const audio = new Audio('sound.mp3');
+        audio.play();
+    }
+
+    window.onload = function() {
+        displayImages();
+        const hour = new Date().getHours();
+        alert(hour < 12 ? "Доброе утро!" : hour < 18 ? "Добрый день!" : "Добрый вечер!");
+    };
+
+    let clickCount = 0;
+    document.getElementById('showTimeBtn').addEventListener('click', function() {
+        clickCount++;
+        if (clickCount === 2) {
+            const now = new Date();
+            const currentTime = now.toLocaleTimeString('ru-RU');
+            document.getElementById('currentTime').textContent = `Текущее время: ${currentTime}`;
+            clickCount = 0;
+        }
+    });
+</script>
+</body>
+</html>

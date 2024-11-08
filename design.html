@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Bootstrap Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light text-light">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item mx-5">
+                        <a href="#section1" class="nav-link">Главная</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a href="aboutus.html" class="nav-link">О Нас</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a href="keys.html" class="nav-link">Кейсы</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a href="task.html" class="nav-link">Задачи</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="content text-center">
+        <h1 class="display-1">Create</h1>
+        <h2 class="display-4">comfort.</h2>
+    </div>
+</header>
+
+<main>
+    <div class="text-center mt-5">
+        <button id="themeToggle" class="btn btn-primary">Переключить тему</button>
+    </div>
+
+   <div id="savedEmailDisplay"></div>
+<div id="savedThemeDisplay"></div>
+    <div id="savedPassword"></div>
+
+    <section id="form-section" class="container my-5">
+        <h2>Регистрация</h2>
+        <form id="registrationForm" class="mt-4">
+            <!-- Step 1: Email Input -->
+            <div id="step1" class="form-step">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <button type="button" class="btn btn-primary next">Далее</button>
+            </div>
+
+            <!-- Step 2: Password Input -->
+            <div id="step2" class="form-step" style="display: none;">
+                <div class="mb-3">
+                    <label for="password" class="form-label">Пароль:</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="button" class="btn btn-secondary back">Назад</button>
+                <button type="button" class="btn btn-primary next">Далее</button>
+            </div>
+
+            <div id="step3" class="form-step" style="display: none;">
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Подтверждение пароля:</label>
+                    <input type="password" class="form-control" id="confirmPassword" required>
+                </div>
+                <button type="button" class="btn btn-secondary back">Назад</button>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </div>
+
+            <p id="error-message" class="text-danger mt-2"></p>
+        </form>
+    </section>
+</main>
+
+
+<footer class="bg-grey text-light py-5 bg-black">
+    <div class="container d-flex justify-content-between">
+        <div>
+            <span class="logo fs-4 fw-bold">CREATE COMFORT</span>
+            <p>Your guide to the world of design</p>
+        </div>
+        <div>
+            <h4>About Us</h4>
+            <ul class="list-unstyled">
+                <li>Portfolio</li>
+                <li>Reviews</li>
+                <li>Keys</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact Us</h4>
+            <p>Astana, Kazakhstan</p>
+            <p>+7 705 622 6140</p>
+        </div>
+    </div>
+    <hr>
+    <p class="text-center">Made by Daurenova Eldana</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="nextback.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* Основной стиль (ночная тема по умолчанию) */
+body {
+    background-color: black;
+    color: white;
+}
+
+/* Стиль для дневной темы */
+.day-theme {
+    background-color: white;
+    color: black;
+}
+
+/* Обновленный стиль для header */
+header.aboutus {
+    background: none;
+    height: auto;
+}
+
+header.aboutus h1,
+header.aboutus h2,
+header.aboutus .content {
+    display: none;
+}
+/* Добавьте в ваш CSS файл */
+.animate {
+    transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+.animate:hover {
+    transform: rotate(15deg) scale(1.1); /* Вращение и увеличение элемента */
+    background-color: #ffcc00; /* Изменение цвета фона */
+}
+
+.animate:active {
+    transform: scale(0.9); /* Эффект "выпрыгивания" при нажатии */
+}
+
+
+header {
+    background: url('imges/1page.png') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Социальные медиа и навбар позиции */
+.social-media {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ddd !important;
+}
+
+h1, h2 {
+    z-index: 1;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+section {
+    padding: 60px 0;
+}

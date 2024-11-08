@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Список задач</title>
+    <script src="sound.js"></script>
+
+    <style>
+        .star {
+            font-size: 2rem;
+            cursor: pointer;
+            color: grey;
+        }
+        .star.selected {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-bg">
+        <nav class="navbar navbar-expand-lg navbar-light text-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item mx-5"><a href="design.html" class="nav-link">Главная</a></li>
+                        <li class="nav-item mx-5"><a href="aboutus.html" class="nav-link">О Нас</a></li>
+                        <li class="nav-item mx-5"><a href="keys.html" class="nav-link">Кейсы</a></li>
+                        <li class="nav-item mx-5"><a href="tasks.html" class="nav-link">Задачи</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="centered-text">
+            <h1>Для вашего удобства</h1>
+        </div>
+    </header>
+
+    <main class="task-container">
+        <div class="container mt-5">
+            <h2>Список задач</h2>
+            <input type="text" id="taskInput" class="form-control mb-3" placeholder="Введите задачу">
+            <button id="addTaskButton" class="btn btn-primary">Добавить задачу</button>
+            <ul id="taskList" class="list-group mt-3"></ul>
+
+            <h2 class="mt-5">Инструмент сортировки чисел</h2>
+            <input type="text" id="numbers" class="form-control mb-3" placeholder="Введите числа (через запятую)">
+            <select id="sortOrder" class="form-select mb-3">
+                <option value="asc">По возрастанию</option>
+                <option value="desc">По убыванию</option>
+            </select>
+            <button id="sortButton" class="btn btn-success">Сортировать</button>
+            <h3>Отсортированные числа:</h3>
+            <p id="result"></p>
+
+            <div class="mt-5 text-center">
+                <h4>Оцените наш сервис:</h4>
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function setupStarRating() {
+            const stars = document.querySelectorAll('.star');
+
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = this.dataset.value;
+                    resetStars();
+                    highlightStars(rating);
+                });
+            });
+        }
+
+        function resetStars() {
+            const stars = document.querySelectorAll('.star');
+            stars.forEach(star => {
+                star.classList.remove('selected');
+            });
+        }
+
+        function highlightStars(rating) {
+            const stars = document.querySelectorAll('.star');
+            for (let i = 0; i < rating; i++) {
+                stars[i].classList.add('selected');
+            }
+        }
+
+        window.onload = setupStarRating;
+    </script>
+</body>
+</html>
